@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspectron</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Menú Hamburguesa -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-icon">&#9776;</label>
+
+    <nav id="menu">
+        <ul>
+            <li id="inicio1"><a href="inicio.html">Inicio</a></li>
+            <li id="sobrenos1"><a href="sobrenos.html">Sobre Nosotros</a></li>
+            <li id="produ1"><a href="produ.html">Nuestro Producto</a></li>
+            <li id="venta1"><a href="venta.html">Venta</a></li>
+            <li id="contacto1"><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <div id="navbar">
+       
+    </div>
+    <!-- Capa de oscurecimiento -->
+    <div id="overlay"></div>
+
+    <!-- Contenido de la Página -->
+    <div id="inicio">
+        <h1>Bienvenido a Inpectron</h1>
+        <p>La solución perfecta para inspecciones industriales.</p>
+    </div>
+
+    <div id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Información sobre nuestra empresa y equipo.</p>
+    </div>
+
+    <div id="nuestro-producto">
+        <h2>Nuestro Producto</h2>
+        <p>Detalles sobre Inpectron y sus características.</p>
+    </div>
+
+    <div id="venta">
+        <h2>Venta</h2>
+        <p>Explora nuestras opciones de venta y precios.</p>
+    </div>
+
+    <div id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas? ¡Contáctanos!</p>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.getElementById('menu-toggle');
+            var overlay = document.getElementById('overlay');
+            var menu = document.getElementById('menu');
+
+            menuToggle.addEventListener('change', function () {
+                if (menuToggle.checked) {
+                    document.body.style.overflow = 'hidden'; // Evita el desplazamiento de la página cuando el menú está abierto
+                    overlay.style.display = 'block';
+                    menu.style.right = '0'; // Mueve el menú hacia la derecha
+                } else {
+                    document.body.style.overflow = ''; // Habilita el desplazamiento de la página cuando el menú está cerrado
+                    overlay.style.display = 'none';
+                    menu.style.right = '-250px'; // Mueve el menú fuera de la pantalla
+                }
+            });
+
+            // Cerrar el menú al hacer clic en el overlay
+            overlay.addEventListener('click', function () {
+                menuToggle.checked = false;
+                document.body.style.overflow = ''; // Habilita el desplazamiento de la página cuando el menú está cerrado
+                overlay.style.display = 'none';
+                menu.style.right = '-250px'; // Mueve el menú fuera de la pantalla
+            });
+        });
+    </script>
+
+    <!-- Estilos CSS -->
+    <style>
+        #inicio1 {background-color: white;}
+        
+        #inicio1 a{
+
+            
+            color: black;
+        }
+        #sobrenos1 a{
+
+           
+            color: white;
+        }
+        #venta1 a{
+
+         
+            color: white;
+        }
+        #produ1 a{
+
+           
+            color: white;
+        }
+        #contacto1 a{
+
+           
+            color: white;
+        }
+    </style>
+
+</body>
+</html>
